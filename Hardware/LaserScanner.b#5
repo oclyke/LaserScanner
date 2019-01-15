@@ -2368,6 +2368,8 @@ design rules under a new name.
 </signal>
 <signal name="!KILL">
 <contactref element="J2" pad="2"/>
+<contactref element="Q4" pad="1"/>
+<wire x1="-152.4" y1="-198.12" x2="-155.89" y2="-209.28" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

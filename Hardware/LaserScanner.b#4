@@ -1759,8 +1759,8 @@ design rules under a new name.
 <element name="D7" library="SparkFun-DiscreteSemi" package="SOD-323" value="3A/10V/280mV" x="-125.73" y="-76.2">
 <attribute name="PROD_ID" value="DIO-14072" x="-125.73" y="-76.2" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
-<element name="R6" library="SparkFun-Resistors" package="0603" value="3.3k" x="-127" y="-80.01">
-<attribute name="PROD_ID" value="RES-07851" x="-127" y="-80.01" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
+<element name="R6" library="SparkFun-Resistors" package="0603" value="330" x="-127" y="-80.01">
+<attribute name="PROD_ID" value="RES-00818" x="-127" y="-80.01" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
 <element name="J3" library="SparkFun-Connectors" package="1X02_NO_SILK" value="KEYSWITCH" x="-127" y="-90.17"/>
 <element name="R11" library="SparkFun-Resistors" package="0603" value="10k" x="-127" y="-95.25">

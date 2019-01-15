@@ -536,24 +536,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
-<package name="1X03_NO_SILK">
-<description>&lt;h3&gt;Plated Through Hole - 3 Pin No Silk Outline&lt;/h3&gt;
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count:3&lt;/li&gt;
-&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;CONN_03&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<pad name="1" x="0" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="2" x="2.54" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<pad name="3" x="5.08" y="0" drill="1.016" diameter="1.8796" rot="R90"/>
-<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
-<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
-<text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
-</package>
 </packages>
 </library>
 <library name="SparkFun-DiscreteSemi">
@@ -1831,13 +1813,13 @@ design rules under a new name.
 <element name="J4" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="-154.94" y="-187.96">
 <attribute name="PROD_ID" value="CONN-08437" x="-154.94" y="-187.96" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
-<element name="J2" library="SparkFun-Connectors" package="1X03_NO_SILK" value="" x="-154.94" y="-198.12"/>
 <element name="Q4" library="SparkFun-DiscreteSemi" package="SOT23-3" value="2.5A/30V/105mΩ" x="-154.94" y="-208.28">
 <attribute name="PROD_ID" value="TRANS-11308" x="-154.94" y="-208.28" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
 <element name="R27" library="SparkFun-Resistors" package="0603" value="10k" x="-154.94" y="-214.63">
 <attribute name="PROD_ID" value="RES-00824" x="-154.94" y="-214.63" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
+<element name="J2" library="SparkFun-Connectors" package="1X02_NO_SILK" value="!KILL!" x="-154.94" y="-219.71"/>
 </elements>
 <signals>
 <signal name="3.3V">
@@ -1925,7 +1907,6 @@ design rules under a new name.
 <contactref element="J4" pad="4"/>
 <contactref element="J4" pad="3"/>
 <contactref element="J4" pad="2"/>
-<contactref element="J2" pad="3"/>
 <contactref element="R27" pad="1"/>
 <wire x1="-135.382" y1="-113.03" x2="-132.93" y2="-114.3" width="0" layer="19" extent="1-1"/>
 <wire x1="-132.93" y1="-106.68" x2="-135.382" y2="-113.03" width="0" layer="19" extent="1-1"/>
@@ -1967,8 +1948,7 @@ design rules under a new name.
 <wire x1="-149.86" y1="-187.96" x2="-147.32" y2="-187.96" width="0" layer="19" extent="1-1"/>
 <wire x1="-152.4" y1="-187.96" x2="-149.86" y2="-187.96" width="0" layer="19" extent="1-1"/>
 <wire x1="-154.94" y1="-187.96" x2="-152.4" y2="-187.96" width="0" layer="19" extent="1-1"/>
-<wire x1="-149.86" y1="-198.12" x2="-149.86" y2="-187.96" width="0" layer="19" extent="1-1"/>
-<wire x1="-155.79" y1="-214.63" x2="-149.86" y2="-198.12" width="0" layer="19" extent="1-1"/>
+<wire x1="-155.79" y1="-214.63" x2="-154.94" y2="-187.96" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TXO">
 <contactref element="U3" pad="3"/>
@@ -2205,10 +2185,10 @@ design rules under a new name.
 </signal>
 <signal name="VCC">
 <contactref element="J5" pad="2"/>
-<contactref element="J2" pad="1"/>
 <contactref element="Q4" pad="2"/>
-<wire x1="-154.94" y1="-198.12" x2="-153.99" y2="-209.28" width="0" layer="19" extent="1-1"/>
-<wire x1="-137.16" y1="-147.32" x2="-154.94" y2="-198.12" width="0" layer="19" extent="1-1"/>
+<contactref element="J2" pad="1"/>
+<wire x1="-153.99" y1="-209.28" x2="-154.94" y2="-219.71" width="0" layer="19" extent="1-1"/>
+<wire x1="-137.16" y1="-147.32" x2="-153.99" y2="-209.28" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC_SWITCHED">
 <contactref element="U$4" pad="2"/>
@@ -2372,11 +2352,11 @@ design rules under a new name.
 <contactref element="U1" pad="7"/>
 </signal>
 <signal name="!KILL">
-<contactref element="J2" pad="2"/>
 <contactref element="Q4" pad="1"/>
 <contactref element="R27" pad="2"/>
+<contactref element="J2" pad="2"/>
+<wire x1="-154.09" y1="-214.63" x2="-152.4" y2="-219.71" width="0" layer="19" extent="1-1"/>
 <wire x1="-155.89" y1="-209.28" x2="-154.09" y2="-214.63" width="0" layer="19" extent="1-1"/>
-<wire x1="-152.4" y1="-198.12" x2="-155.89" y2="-209.28" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
