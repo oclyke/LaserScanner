@@ -1,3 +1,17 @@
 # Eagle
 *.b##
 *.s##
+
+# Build
+*.o
+*.d
+*.a
+build/
+
+# Config
+sdkconfig.ci
+sdkconfig.old
+.gdbinit.ci
+
+# DS Store
+.DS_Store
