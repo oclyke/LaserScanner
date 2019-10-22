@@ -8111,9 +8111,9 @@ Pull-down prefers the safe(r) state</text>
 <attribute name="NAME" x="295.656" y="247.015" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="295.656" y="242.189" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="C19" gate="G$1" x="294.64" y="231.14" rot="R180">
-<attribute name="NAME" x="293.624" y="230.505" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="293.624" y="235.331" size="1.778" layer="96" font="vector" rot="R180"/>
+<instance part="C19" gate="G$1" x="294.64" y="233.68">
+<attribute name="NAME" x="295.656" y="234.315" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="295.656" y="229.489" size="1.778" layer="96" font="vector"/>
 </instance>
 <instance part="C20" gate="G$1" x="259.08" y="218.44">
 <attribute name="NAME" x="260.096" y="219.075" size="1.778" layer="95" font="vector"/>
@@ -8590,13 +8590,13 @@ Pull-down prefers the safe(r) state</text>
 </segment>
 <segment>
 <pinref part="C18" gate="G$1" pin="-"/>
-<pinref part="C19" gate="G$1" pin="-"/>
 <wire x1="294.64" y1="241.3" x2="294.64" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="294.64" y1="238.76" x2="294.64" y2="236.22" width="0.1524" layer="91"/>
 <wire x1="294.64" y1="238.76" x2="284.48" y2="238.76" width="0.1524" layer="91"/>
-<junction x="294.64" y="238.76"/>
 <wire x1="284.48" y1="238.76" x2="284.48" y2="236.22" width="0.1524" layer="91"/>
 <pinref part="GND35" gate="1" pin="GND"/>
+<pinref part="C19" gate="G$1" pin="+"/>
+<wire x1="294.64" y1="236.22" x2="294.64" y2="238.76" width="0.1524" layer="91"/>
+<junction x="294.64" y="238.76"/>
 </segment>
 <segment>
 <pinref part="C22" gate="G$1" pin="-"/>
@@ -8920,9 +8920,9 @@ Pull-down prefers the safe(r) state</text>
 <wire x1="226.06" y1="190.5" x2="228.6" y2="190.5" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C19" gate="G$1" pin="+"/>
-<wire x1="294.64" y1="226.06" x2="294.64" y2="228.6" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="-"/>
 <pinref part="SUPPLY43" gate="G$1" pin="-12V"/>
+<wire x1="294.64" y1="228.6" x2="294.64" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">

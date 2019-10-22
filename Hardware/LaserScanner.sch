@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.1.3">
+<eagle version="9.2.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -8295,8 +8295,14 @@ Pull-down prefers the safe(r) state</text>
 <instance part="GND44" gate="1" x="53.34" y="139.7" rot="MR0">
 <attribute name="VALUE" x="53.34" y="139.446" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="D10" gate="G$1" x="30.48" y="160.02"/>
-<instance part="D11" gate="G$1" x="43.18" y="160.02"/>
+<instance part="D10" gate="G$1" x="30.48" y="160.02">
+<attribute name="NAME" x="27.051" y="155.448" size="1.778" layer="95" font="vector" rot="R90"/>
+<attribute name="VALUE" x="32.385" y="155.448" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+</instance>
+<instance part="D11" gate="G$1" x="43.18" y="160.02">
+<attribute name="NAME" x="39.751" y="155.448" size="1.778" layer="95" font="vector" rot="R90"/>
+<attribute name="VALUE" x="45.085" y="155.448" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+</instance>
 <instance part="R32" gate="G$1" x="30.48" y="147.32" rot="R90">
 <attribute name="NAME" x="28.956" y="147.32" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="32.004" y="147.32" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
@@ -8311,7 +8317,10 @@ Pull-down prefers the safe(r) state</text>
 <instance part="GND42" gate="1" x="43.18" y="137.16" rot="MR0">
 <attribute name="VALUE" x="43.18" y="136.906" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="R35" gate="G$1" x="162.56" y="76.2" rot="R90"/>
+<instance part="R35" gate="G$1" x="162.56" y="76.2" rot="R90">
+<attribute name="NAME" x="161.036" y="76.2" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="164.084" y="76.2" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
+</instance>
 <instance part="GND27" gate="1" x="162.56" y="66.04">
 <attribute name="VALUE" x="162.56" y="65.786" size="1.778" layer="96" align="top-center"/>
 </instance>
@@ -9606,30 +9615,6 @@ Pull-down prefers the safe(r) state</text>
 <wire x1="388.62" y1="68.58" x2="391.16" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$8" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="IO4"/>
-<wire x1="63.5" y1="241.3" x2="60.96" y2="241.3" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="CS0_V/IO5"/>
-<wire x1="63.5" y1="238.76" x2="60.96" y2="238.76" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$22" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="XTAL_P/IO32"/>
-<wire x1="63.5" y1="198.12" x2="60.96" y2="198.12" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$23" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="XTAL_N/IO33"/>
-<wire x1="63.5" y1="195.58" x2="60.96" y2="195.58" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="!KILL" class="0">
 <segment>
 <wire x1="335.28" y1="106.68" x2="337.82" y2="106.68" width="0.1524" layer="91"/>
@@ -9695,9 +9680,9 @@ Pull-down prefers the safe(r) state</text>
 <label x="30.48" y="165.1" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="IO34"/>
-<wire x1="63.5" y1="193.04" x2="60.96" y2="193.04" width="0.1524" layer="91"/>
-<label x="63.5" y="193.04" size="1.27" layer="95" xref="yes"/>
+<wire x1="63.5" y1="198.12" x2="60.96" y2="198.12" width="0.1524" layer="91"/>
+<label x="63.5" y="198.12" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="XTAL_P/IO32"/>
 </segment>
 </net>
 <net name="ULED2" class="0">
@@ -9707,9 +9692,9 @@ Pull-down prefers the safe(r) state</text>
 <label x="43.18" y="165.1" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="IO35"/>
-<wire x1="63.5" y1="190.5" x2="60.96" y2="190.5" width="0.1524" layer="91"/>
-<label x="63.5" y="190.5" size="1.27" layer="95" xref="yes"/>
+<wire x1="63.5" y1="195.58" x2="60.96" y2="195.58" width="0.1524" layer="91"/>
+<label x="63.5" y="195.58" size="1.27" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="XTAL_N/IO33"/>
 </segment>
 </net>
 </nets>

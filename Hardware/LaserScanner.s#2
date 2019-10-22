@@ -1725,6 +1725,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <rectangle x1="-2.5" y1="-1.25" x2="-1.6393" y2="1.25" layer="51"/>
 <rectangle x1="1.651" y1="-1.25" x2="2.5" y2="1.25" layer="51"/>
 </package>
+<package name="AXIAL-0.3EZ">
+<description>This is the "EZ" version of the standard .3" spaced resistor package.&lt;br&gt;
+It has a reduced top mask to make it harder to install upside-down.</description>
+<wire x1="-2.54" y1="0.762" x2="2.54" y2="0.762" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="0.762" x2="2.54" y2="0" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-0.762" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="-0.762" x2="-2.54" y2="-0.762" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="-0.762" x2="-2.54" y2="0" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.54" y2="0.762" width="0.2032" layer="21"/>
+<wire x1="2.54" y1="0" x2="2.794" y2="0" width="0.2032" layer="21"/>
+<wire x1="-2.54" y1="0" x2="-2.794" y2="0" width="0.2032" layer="21"/>
+<pad name="P$1" x="-3.81" y="0" drill="0.9" diameter="1.8796" stop="no"/>
+<pad name="P$2" x="3.81" y="0" drill="0.9" diameter="1.8796" stop="no"/>
+<text x="0" y="1.016" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;Name</text>
+<text x="0" y="-1.016" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;Value</text>
+<circle x="-3.81" y="0" radius="0.508" width="0" layer="29"/>
+<circle x="3.81" y="0" radius="0.523634375" width="0" layer="29"/>
+<circle x="-3.81" y="0" radius="1.02390625" width="0" layer="30"/>
+<circle x="3.81" y="0" radius="1.04726875" width="0" layer="30"/>
+</package>
 </packages>
 <symbols>
 <symbol name="RESISTOR">
@@ -2075,6 +2095,87 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <technology name="">
 <attribute name="PROD_ID" value="RES-07851"/>
 <attribute name="VALUE" value="3.3k"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="100OHM" prefix="R">
+<description>&lt;h3&gt;100Ω resistor&lt;/h3&gt;
+&lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-HORIZ-1/4W-1%" package="AXIAL-0.3">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-12181" constant="no"/>
+<attribute name="VALUE" value="100" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-HORIZ_KIT-1/4W-1%" package="AXIAL-0.3EZ">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-12181" constant="no"/>
+<attribute name="VALUE" value="100" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-VERT-1/4W-1%" package="AXIAL-0.1">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-12181"/>
+<attribute name="VALUE" value="100"/>
+</technology>
+</technologies>
+</device>
+<device name="-VERT_KIT-1/4W-1%" package="AXIAL-0.1-KIT">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-12181" constant="no"/>
+<attribute name="VALUE" value="100" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="-0603-1/4W-5%" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-12438"/>
+<attribute name="VALUE" value="100"/>
+</technology>
+</technologies>
+</device>
+<device name="-0603-1/10W-1%" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="RES-07863"/>
+<attribute name="VALUE" value="100"/>
 </technology>
 </technologies>
 </device>
@@ -7521,6 +7622,9 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="R34" library="SparkFun-Resistors" deviceset="1KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="GND36" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND42" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="R35" library="SparkFun-Resistors" deviceset="100OHM" device="-0603-1/4W-5%" value="100"/>
+<part name="GND27" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7623,20 +7727,20 @@ Pull-down prefers the safe(r) state</text>
 <attribute name="NAME" x="116.84" y="203.835" size="1.778" layer="95"/>
 <attribute name="VALUE" x="116.84" y="177.8" size="1.778" layer="96"/>
 </instance>
-<instance part="R2" gate="G$1" x="160.02" y="78.74" rot="R90">
-<attribute name="NAME" x="158.496" y="78.74" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="161.544" y="78.74" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
+<instance part="R2" gate="G$1" x="180.34" y="78.74" rot="R90">
+<attribute name="NAME" x="178.816" y="78.74" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="181.864" y="78.74" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
 </instance>
-<instance part="D1" gate="G$1" x="160.02" y="91.44">
-<attribute name="NAME" x="156.591" y="86.868" size="1.778" layer="95" font="vector" rot="R90"/>
-<attribute name="VALUE" x="161.925" y="86.868" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
+<instance part="D1" gate="G$1" x="180.34" y="91.44">
+<attribute name="NAME" x="176.911" y="86.868" size="1.778" layer="95" font="vector" rot="R90"/>
+<attribute name="VALUE" x="182.245" y="86.868" size="1.778" layer="96" font="vector" rot="R90" align="top-left"/>
 </instance>
 <instance part="C7" gate="G$1" x="149.86" y="190.5">
 <attribute name="NAME" x="151.384" y="193.421" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="151.384" y="188.341" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="GND8" gate="1" x="160.02" y="68.58">
-<attribute name="VALUE" x="160.02" y="68.326" size="1.778" layer="96" align="top-center"/>
+<instance part="GND8" gate="1" x="180.34" y="68.58">
+<attribute name="VALUE" x="180.34" y="68.326" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="GND9" gate="1" x="96.52" y="177.8">
 <attribute name="VALUE" x="96.52" y="177.546" size="1.778" layer="96" align="top-center"/>
@@ -7800,8 +7904,8 @@ Pull-down prefers the safe(r) state</text>
 <instance part="SUPPLY13" gate="G$1" x="147.32" y="25.4">
 <attribute name="VALUE" x="147.32" y="28.194" size="1.778" layer="96" align="bottom-center"/>
 </instance>
-<instance part="SUPPLY4" gate="G$1" x="160.02" y="96.52">
-<attribute name="VALUE" x="160.02" y="99.314" size="1.778" layer="96" align="bottom-center"/>
+<instance part="SUPPLY4" gate="G$1" x="180.34" y="96.52">
+<attribute name="VALUE" x="180.34" y="99.314" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 <instance part="SUPPLY12" gate="G$1" x="119.38" y="25.4">
 <attribute name="VALUE" x="119.38" y="28.194" size="1.778" layer="96" align="bottom-center"/>
@@ -8208,6 +8312,13 @@ Pull-down prefers the safe(r) state</text>
 <instance part="GND42" gate="1" x="43.18" y="137.16" rot="MR0">
 <attribute name="VALUE" x="43.18" y="136.906" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
+<instance part="R35" gate="G$1" x="162.56" y="78.74" rot="R90"/>
+<instance part="GND27" gate="1" x="162.56" y="68.58">
+<attribute name="VALUE" x="162.56" y="68.326" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="SUPPLY2" gate="G$1" x="162.56" y="96.52">
+<attribute name="VALUE" x="162.56" y="99.314" size="1.778" layer="96" align="bottom-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -8342,7 +8453,7 @@ Pull-down prefers the safe(r) state</text>
 <net name="GND" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="160.02" y1="73.66" x2="160.02" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="73.66" x2="180.34" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -8632,6 +8743,11 @@ Pull-down prefers the safe(r) state</text>
 <pinref part="GND42" gate="1" pin="GND"/>
 <wire x1="43.18" y1="142.24" x2="43.18" y2="139.7" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R35" gate="G$1" pin="1"/>
+<pinref part="GND27" gate="1" pin="GND"/>
+<wire x1="162.56" y1="73.66" x2="162.56" y2="71.12" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="TXO" class="0">
 <segment>
@@ -8741,7 +8857,7 @@ Pull-down prefers the safe(r) state</text>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="D1" gate="G$1" pin="C"/>
-<wire x1="160.02" y1="86.36" x2="160.02" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="86.36" x2="180.34" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SHIELD" class="0">
@@ -8971,7 +9087,7 @@ Pull-down prefers the safe(r) state</text>
 <net name="5V" class="0">
 <segment>
 <pinref part="D1" gate="G$1" pin="A"/>
-<wire x1="160.02" y1="93.98" x2="160.02" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="93.98" x2="180.34" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="G$1" pin="5V"/>
 </segment>
 <segment>
@@ -9018,6 +9134,11 @@ Pull-down prefers the safe(r) state</text>
 <pinref part="SUPPLY46" gate="G$1" pin="5V"/>
 <pinref part="C22" gate="G$1" pin="+"/>
 <wire x1="307.34" y1="134.62" x2="307.34" y2="132.08" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY2" gate="G$1" pin="5V"/>
+<pinref part="R35" gate="G$1" pin="2"/>
+<wire x1="162.56" y1="96.52" x2="162.56" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">

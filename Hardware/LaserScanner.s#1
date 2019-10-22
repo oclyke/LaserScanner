@@ -7624,7 +7624,6 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="GND42" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="R35" library="SparkFun-Resistors" deviceset="100OHM" device="-0603-1/4W-5%" value="100"/>
 <part name="GND27" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
-<part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8312,12 +8311,9 @@ Pull-down prefers the safe(r) state</text>
 <instance part="GND42" gate="1" x="43.18" y="137.16" rot="MR0">
 <attribute name="VALUE" x="43.18" y="136.906" size="1.778" layer="96" rot="MR0" align="top-center"/>
 </instance>
-<instance part="R35" gate="G$1" x="162.56" y="78.74" rot="R90"/>
-<instance part="GND27" gate="1" x="162.56" y="68.58">
-<attribute name="VALUE" x="162.56" y="68.326" size="1.778" layer="96" align="top-center"/>
-</instance>
-<instance part="SUPPLY2" gate="G$1" x="162.56" y="96.52">
-<attribute name="VALUE" x="162.56" y="99.314" size="1.778" layer="96" align="bottom-center"/>
+<instance part="R35" gate="G$1" x="162.56" y="76.2" rot="R90"/>
+<instance part="GND27" gate="1" x="162.56" y="66.04">
+<attribute name="VALUE" x="162.56" y="65.786" size="1.778" layer="96" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -8746,7 +8742,7 @@ Pull-down prefers the safe(r) state</text>
 <segment>
 <pinref part="R35" gate="G$1" pin="1"/>
 <pinref part="GND27" gate="1" pin="GND"/>
-<wire x1="162.56" y1="73.66" x2="162.56" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="71.12" x2="162.56" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TXO" class="0">
@@ -9135,11 +9131,6 @@ Pull-down prefers the safe(r) state</text>
 <pinref part="C22" gate="G$1" pin="+"/>
 <wire x1="307.34" y1="134.62" x2="307.34" y2="132.08" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="SUPPLY2" gate="G$1" pin="5V"/>
-<pinref part="R35" gate="G$1" pin="2"/>
-<wire x1="162.56" y1="96.52" x2="162.56" y2="83.82" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
@@ -9281,6 +9272,9 @@ Pull-down prefers the safe(r) state</text>
 <wire x1="149.86" y1="86.36" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
 <junction x="149.86" y="83.82"/>
 <pinref part="C4" gate="G$1" pin="+"/>
+<wire x1="149.86" y1="83.82" x2="162.56" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="R35" gate="G$1" pin="2"/>
+<wire x1="162.56" y1="83.82" x2="162.56" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">

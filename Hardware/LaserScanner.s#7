@@ -9092,9 +9092,9 @@ Pull-down prefers the safe(r) state</text>
 <label x="287.02" y="157.48" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="J6" gate="G$1" pin="5"/>
-<wire x1="340.36" y1="53.34" x2="342.9" y2="53.34" width="0.1524" layer="91"/>
-<label x="340.36" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="340.36" y1="55.88" x2="342.9" y2="55.88" width="0.1524" layer="91"/>
+<label x="340.36" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="J6" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="L_SCLK" class="0">
@@ -9133,9 +9133,9 @@ Pull-down prefers the safe(r) state</text>
 <label x="279.4" y="157.48" size="1.27" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="J6" gate="G$1" pin="4"/>
-<wire x1="340.36" y1="55.88" x2="342.9" y2="55.88" width="0.1524" layer="91"/>
-<label x="340.36" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="340.36" y1="53.34" x2="342.9" y2="53.34" width="0.1524" layer="91"/>
+<label x="340.36" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="J6" gate="G$1" pin="5"/>
 </segment>
 </net>
 <net name="L_!CLR" class="0">
