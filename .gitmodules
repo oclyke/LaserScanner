@@ -1,0 +1,3 @@
+[submodule "Software/DA80004_ESP32/DAX0004"]
+	path = Software/third_party/DAX0004
+	url = https://github.com/oclyke/DAX0004
