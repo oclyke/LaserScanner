@@ -1,0 +1,2 @@
+idf_component_register(SRCS "main.c" "../../../third_party/DAC8871/dac8871.c" "../../../third_party/DAC8871/if_imp/esp32/dac8871_platform_esp32.c"
+                    INCLUDE_DIRS "" "../../../third_party/DAC8871" "../../../third_party/DAC8871/if_imp/esp32")
