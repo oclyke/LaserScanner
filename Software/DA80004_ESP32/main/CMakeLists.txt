@@ -1,2 +1,0 @@
-idf_component_register(SRCS "main.c" "../../third_party/DAX0004/dax0004.c" "fast_hsv2rgb_32bit.c" "../../third_party/DAX0004/if_imp/esp32/dax0004_platform_esp32.c"
-                    INCLUDE_DIRS "" "../../third_party/DAX0004" "../../third_party/DAX0004/if_imp/esp32")
