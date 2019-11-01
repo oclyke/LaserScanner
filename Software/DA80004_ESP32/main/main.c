@@ -81,5 +81,6 @@ void app_main(void)
 
   while(1){
     vTaskDelay(200 / portTICK_PERIOD_MS);
+    dax_ret = dax0004_write_sr(&dax, sr);     // Writes the command to the DAX
   }
 }
