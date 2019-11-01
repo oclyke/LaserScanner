@@ -98,6 +98,8 @@ void app_main(void)
             h = HSV_HUE_MIN;
         }
 
+        vTaskDelay(50 / portTICK_PERIOD_MS);
+
 #if USE_FAST_TRANSFER 
         finish_set_laser_rgb_fast(); // waits until DMA is ready
 #endif
