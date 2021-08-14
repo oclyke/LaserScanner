@@ -1,6 +1,6 @@
-# Eagle
-*.b##
-*.s##
+## Eagle
+#*.b##
+#*.s##
 
 # Build
 *.o
