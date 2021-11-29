@@ -11,7 +11,7 @@
 #define PIN_NUM_RST 22
 
 #define HOST            HSPI_HOST
-#define CLOCK_FREQ      40000000    // 50 MHz max for DA80004
+#define CLOCK_FREQ      40000000    // 50 MHz max for DAC80004
 #define MAX_XFER_SIZE   0           // defaults to 4096 if set to 0
 #define MAX_Q_SIZE      1
 #define DMA_CHANNEL     1

@@ -10,15 +10,15 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#include "dax0004_platform_esp32.h"
+#include "dacx0004_platform_esp32.h"
 #include "fast_hsv2rgb.h"
 
 
 #define USE_FAST_TRANSFER 0
 
-#define LASER_CHANNEL_RED   DAX0004_ADD_A
-#define LASER_CHANNEL_GREEN DAX0004_ADD_B
-#define LASER_CHANNEL_BLUE  DAX0004_ADD_C
+#define LASER_CHANNEL_RED   DACX0004_ADD_A
+#define LASER_CHANNEL_GREEN DACX0004_ADD_B
+#define LASER_CHANNEL_BLUE  DACX0004_ADD_C
 
 #define PIN_NUM_MISO -1
 #define PIN_NUM_MOSI 23
@@ -28,7 +28,7 @@
 #define PIN_NUM_CLR 25
 
 #define HOST            VSPI_HOST
-#define CLOCK_FREQ      40000000    // 50 MHz max for DA80004
+#define CLOCK_FREQ      40000000    // 50 MHz max for DAC80004
 #define MAX_XFER_SIZE   0           // defaults to 4096 if set to 0
 #define MAX_Q_SIZE      1
 #define DMA_CHANNEL     1
@@ -43,7 +43,7 @@ void finish_set_laser_rgb_fast( void );
 
 
 // Globals
-dax0004_dev_t         dax = {0};
+dacx0004_dev_t         dax = {0};
 dax_if_esp32_arg_t  if_args = {
     .spi = NULL,
     .host = HOST,
@@ -59,7 +59,7 @@ dax_if_esp32_arg_t  if_args = {
 
 void app_main(void)
 {
-    dax0004_status_e dax_ret = DAX0004_STAT_OK;
+    dacx0004_status_e dax_ret = DACX0004_STAT_OK;
     uint8_t r, g, b;
     uint8_t s, v;
     static uint16_t h = HSV_HUE_MIN;
@@ -78,7 +78,7 @@ void app_main(void)
     ESP_ERROR_CHECK(spi_bus_initialize(if_args.host, &buscfg, DMA_CHANNEL));
 
     // DAX Operations
-    dax_ret = dax0004_init_dev(&dax, DA80004, &dax_if_esp32, &if_args);
+    dax_ret = dacx0004_init_dev(&dax, DAC80004, &dax_if_esp32, &if_args);
     printf("dax initialized with return code: (%d)\n", dax_ret);
 
 
@@ -126,10 +126,10 @@ void set_laser_rgb_fast(uint16_t r, uint16_t g, uint16_t b){
     // (i.e. not using the interface functions that were defined)
     // this 'fast' function uses the automatic chip select feature of the spi driver
     // and thereby avoids a few extra function calls to 'set_sync' high and low.
-    dax0004_status_e dax_ret = DAX0004_STAT_OK;
+    dacx0004_status_e dax_ret = DACX0004_STAT_OK;
     da80004_sr_t sr = {
-        .Rw = DAX0004_RW_WRITE,
-        .cmd = DAX0004_CMD_WRITEn_UPDATEn,
+        .Rw = DACX0004_RW_WRITE,
+        .cmd = DACX0004_CMD_WRITEn_UPDATEn,
     };
     static bool spi_initialized = false;
     if(!spi_initialized){
@@ -167,17 +167,17 @@ void set_laser_rgb_fast(uint16_t r, uint16_t g, uint16_t b){
     // preformat red level
     sr.add = LASER_CHANNEL_RED;
     sr.dat = r;
-    dax0004_format_sr(&dax, sr, (uint8_t*)(cmds + 0), 4);
+    dacx0004_format_sr(&dax, sr, (uint8_t*)(cmds + 0), 4);
 
     // preformat blue level
     sr.add = LASER_CHANNEL_BLUE;
     sr.dat = b;
-    dax0004_format_sr(&dax, sr, (uint8_t*)(cmds + 4), 4);
+    dacx0004_format_sr(&dax, sr, (uint8_t*)(cmds + 4), 4);
 
     // preformat green level
     sr.add = LASER_CHANNEL_GREEN;
     sr.dat = g;
-    dax0004_format_sr(&dax, sr, (uint8_t*)(cmds + 8), 4);
+    dacx0004_format_sr(&dax, sr, (uint8_t*)(cmds + 8), 4);
 
     // spi_transaction_t trans[3] = {{0}, {0}, {0}}; // zeroing out the transaction was key - presumably bad data was causing havoc
     
@@ -214,25 +214,25 @@ void finish_set_laser_rgb_fast( void ){
 #else
 void set_laser_rgb(uint16_t r, uint16_t g, uint16_t b){
     // this function uses a standard interface with separate functions for shifting out data and toggling the sync line
-    dax0004_status_e dax_ret = DAX0004_STAT_OK;
+    dacx0004_status_e dax_ret = DACX0004_STAT_OK;
     da80004_sr_t sr = {
-        .Rw = DAX0004_RW_WRITE,
-        .cmd = DAX0004_CMD_WRITEn_UPDATEn,
+        .Rw = DACX0004_RW_WRITE,
+        .cmd = DACX0004_CMD_WRITEn_UPDATEn,
     };
 
     // set red level
     sr.add = LASER_CHANNEL_RED;
     sr.dat = r;
-    dax_ret = dax0004_write_sr(&dax, sr);
+    dax_ret = dacx0004_write_sr(&dax, sr);
 
     // set blue level
     sr.add = LASER_CHANNEL_BLUE;
     sr.dat = b;
-    dax_ret = dax0004_write_sr(&dax, sr);
+    dax_ret = dacx0004_write_sr(&dax, sr);
 
     // set green level
     sr.add = LASER_CHANNEL_GREEN;
     sr.dat = g;
-    dax_ret = dax0004_write_sr(&dax, sr);
+    dax_ret = dacx0004_write_sr(&dax, sr);
 }
 #endif // USE_FAST_TRANSFERs
